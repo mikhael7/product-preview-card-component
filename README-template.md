@@ -37,12 +37,10 @@ Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to t
 
 Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
 
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
-
 ### Links
 
 - Solution URL: [frontendmentor](https://www.frontendmentor.io/solutions/productpreviewcardcomponentmain-E520fOdzqH)
-- Live Site URL: [Vercel](https://your-live-site-url.com)
+- Live Site URL: [Vercel](https://product-preview-card-component-main-black.vercel.app)
 
 ## My process
 
@@ -53,11 +51,6 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
@@ -65,49 +58,96 @@ Use this section to recap over some of your major learnings while working throug
 
 To see how you can add code snippets, see below:
 
+Image srcset and aria-label
+
 ```html
-<h1>Some HTML code I'm proud of</h1>
+<img
+    src="./images/image-product-desktop.jpg"
+    srcset="
+      ./images/image-product-desktop.jpg 1440w,
+      ./images/image-product-mobile.jpg   600w
+    "
+    sizes="(min-width: 1440px) 650px, 100vw"
+    alt="image-product"
+    aria-label="product image"
+/>
 ```
+
+Importing font variation
 
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+@font-face {
+  font-family: "Montserrat";
+  src: url("./fonts/Montserrat/Montserrat-VariableFont_wght.ttf")
+    format("truetype-variations");
+  font-weight: 125 950;
+  font-style: normal;
 }
 ```
 
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
+Font smoothing
+
+```css
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+```
+
+Changing font variations ( **each font variation can have different settings** )
+
+```css
+font-variation-settings: "wght" 600;
+```
+
+**Example: font Fraunces have SOFT, WONK, opsz, and wght**
+
+```css
+@font-face {
+  font-family: "Fraunces";
+  src: url("./fonts/Fraunces/Fraunces-VariableFont_SOFT\,WONK\,opsz\,wght.ttf")
+    format("truetype-variations");
+  font-weight: 125 950;
+  font-stretch: 75% 125%;
+  font-style: normal;
 }
+```
+
+Better font size formatting to support Firefox and Safari browser
+
+```css
+  --font-size-s: 0.5em;
+  --font-size-sm: 0.75em;
+  --font-size-m: 1em;
+  --font-size-l: 1.5emt;
+  --font-size-xl: 2em;
+  --font-size-xxl: 2.5em;
+```
+
+Change 100vw/vh value to 32.5rem, so that component not behave weirdly.
+
+```css
+  max-height: 32.5rem;
 ```
 
 If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
 
 ### Continued development
 
 Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+- HTML know when to use aria-label for element
+- CSS using font variations, better font size formatting, and changing 100vw/vh to 32.5rem
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [Variable Fonts Guide](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Fonts/Variable_Fonts_Guide) - This documentation from MDN helped me know about Font Variable.
+- [convertunits.com](https://www.convertunits.com/from/pt/to/em) - This website help me to convert pt to em.
+- [Stop Importing Multiple Fonts and Start Using Variables Fonts](https://blog.prototypr.io/stop-importing-multiple-fonts-and-start-using-variable-fonts-86329399098b) - This article help me to importing font variable in css.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
+- Frontend Mentor - [@mikhael7](https://www.frontendmentor.io/profile/@mikhael7)
+- Github - [@mikhael7](https://github.com/mikhael7)
 
 ## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+Thanks to [Melvin Aguliar](https://www.frontendmentor.io/profile/MelvinAguilar) 👏 for giving suggestion and feedback
