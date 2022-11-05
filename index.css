@@ -208,7 +208,7 @@ footer {
   }
   main.product-section > div.card > div.card-body > p.product-desc {
     font-size: var(--font-size-xs);
-    margin-top: 1rem;
+    margin-top: 0.5rem;
   }
   main.product-section > div.card > div.card-body > button.product-button {
     padding: 0.75rem;
